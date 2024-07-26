@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game of Thrones Character</title>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <p>Gender: {{ gender }}</p>
+    <p>Culture: {{ culture }}</p>
+    <p>Born: {{ born }}</p>
+    <h2>Titles:</h2>
+    <ul>
+    {% for title in titles %}
+        <li>{{ title }}</li>
+    {% endfor %}
+    </ul>
+    <form method="GET" action="{% url 'get_character' %}">
+        <input type="text" name="id" placeholder="Enter character ID">
+        <button type="submit">Get Character</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game of Thrones House</title>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <p>Region: {{ region }}</p>
+    <p>Coat of Arms: {{ coatOfArms }}</p>
+    <p>Words: {{ words }}</p>
+    <h2>Titles:</h2>
+    <ul>
+    {% for title in titles %}
+        <li>{{ title }}</li>
+    {% endfor %}
+    </ul>
+    <form method="GET" action="{% url 'get_house' %}">
+        <input type="text" name="id" placeholder="Enter house ID">
+        <button type="submit">Get House</button>
+    </form>
+</body>
+</html>
